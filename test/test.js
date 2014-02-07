@@ -1,7 +1,7 @@
 var test = require('tap').test
 var index = require('../index.js')
-var admesh = '/Users/mac/Downloads/admesh-0.96/admesh'
-var file = '/Users/mac/code/stl-parser/gear.stl'
+var admesh = '../admesh'
+var file = './gear.stl'
 
 var input = "======= Results produced by ADMesh version 0.96 ======\n"
 	+ "Input file         : /Users/mac/code/stl-parser/gear.stl\n"
@@ -61,7 +61,7 @@ test('only called once', function once(t){
 
 test('no errors!', function noError(t){
 	t.plan(1)
-	index(admesh, '/Users/mac/code/stl-parser/gear.stl', function(error, output){
+	index(admesh, './gear.stl', function(error, output){
 		t.notOk(error, "no error!")
 
 	})
@@ -76,7 +76,7 @@ test('its an object', function isIt(t){
 })
 
 test('testing a different file', function(t){
-	index(admesh, '/Users/mac/code/stl-parser/bridge.stl', function(error, output){
+	index(admesh, './bridge.stl', function(error, output){
 		console.log(output)
 	})
 	t.end()

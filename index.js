@@ -6,8 +6,7 @@ module.exports = function(admesh, file, callback){
 	var child = cp.spawn(admesh, [file])
 
 	var write = concat(function(code){
-		parsedResult = {}
-		parsedResult.minx = parseFloat(/Min X = (.*),/.exec(code)[1])
+		var parsedResult = {}
 		parsedResult.minx = parseFloat(/Min X = (.*),/.exec(code)[1])
 		parsedResult.maxx = parseFloat(/Max X =\s*(.*)/.exec(code)[1])
 		parsedResult.miny = parseFloat(/Min Y = (.*),/.exec(code)[1])
